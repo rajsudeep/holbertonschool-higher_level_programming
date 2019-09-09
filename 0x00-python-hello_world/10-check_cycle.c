@@ -9,14 +9,14 @@
  */
 listint_t *_find_listint_loop(listint_t *head, listint_t *marker)
 {
-        listint_t *curr = head;
+	listint_t *curr = head;
 
-        while (curr != marker)
-        {
-                curr = curr->next;
-                marker = marker->next;
-        }
-        return (curr);
+	while (curr != marker)
+	{
+		curr = curr->next;
+		marker = marker->next;
+	}
+	return (curr);
 }
 
 /**
@@ -28,16 +28,16 @@ listint_t *_find_listint_loop(listint_t *head, listint_t *marker)
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-        listint_t *marker = head, *next = head;
+	listint_t *marker = head, *next = head;
 
-        while (marker != NULL && next != NULL && next->next != NULL)
-        {
-                marker = marker->next;
-                next = next->next->next;
-                if (marker == next)
-                        return (_find_listint_loop(head, marker));
-        }
-        return (NULL);
+	while (marker != NULL && next != NULL && next->next != NULL)
+	{
+		marker = marker->next;
+		next = next->next->next;
+		if (marker == next)
+			return (_find_listint_loop(head, marker));
+	}
+	return (NULL);
 }
 
 /**
