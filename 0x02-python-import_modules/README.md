@@ -14,3 +14,7 @@
 > Write a program that prints all the names defined by the compiled module [hidden_4.pyc](https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc)
 ### [5. Everything can be imported](./5-variable_load.py)
 > Write a program that imports the variable a from the file variable_load_5.py and prints its value
+### [101. Easy print](./101-easy_print.py)
+> Write a program that prints #pythoniscool, followed by a new line, in the standard output
+### [103. Fast alphabet](./103-fast_alphabet.py)
+> Write a program that prints the alphabet in uppercase, followed by a new line
