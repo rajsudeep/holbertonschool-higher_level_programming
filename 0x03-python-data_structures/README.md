@@ -28,5 +28,5 @@
 > Write a function that deletes the item at a specific position in a list
 ### [12. Switch](./12-switch.py)
 > Complete the source code in order to switch value of a and b
-### [13. Linked list palindrome)(./13-is_palindrome.c)
+### [13. Linked list palindrome](./13-is_palindrome.c)
 > Write a function in C that checks if a singly linked list is a palindrome
