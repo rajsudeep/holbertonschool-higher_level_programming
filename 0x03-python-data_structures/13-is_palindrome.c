@@ -30,5 +30,7 @@ int _is_palindrome(listint_t **head, listint_t *tail)
  */
 int is_palindrome(listint_t **head)
 {
+	if (*head == NULL)
+		return (1);
 	return (_is_palindrome(head, *head));
 }
