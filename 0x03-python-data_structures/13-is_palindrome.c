@@ -1,26 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-
-/**
- * _is_palindrome - compares the head and tail of a list
- * @head: reference to a singly linked list of integers
- * @tail: singly linked list of integers
- *
- * Return: If list is a palindrome 1, if not 0
- */
-int _is_palindrome(listint_t **head, listint_t *tail)
-{
-	if (tail == NULL || (*head)->n == tail->n)
-		return (1);
-	if ((_is_palindrome(head, tail->next)) == 1)
-		return (0);
-
-	if ((*head)->n != tail->n)
-		return (0);
-	*head = (*head)->next;
-
-	return (1);
-}
 
 /**
  * is_palindrome - checks if a list is a palindrome
@@ -30,7 +8,16 @@ int _is_palindrome(listint_t **head, listint_t *tail)
  */
 int is_palindrome(listint_t **head)
 {
-	if (*head == NULL)
-		return (1);
-	return (_is_palindrome(head, *head));
+	listint_t *tmp = *head;
+	int arr[2056];
+	int i, j, k;
+
+	for (i = 0; tmp != NULL; i++, tmp = tmp->next)
+		arr[i] = tmp->n;
+	j = (--i / 2) +1;
+	tmp = *head;
+	for (k = 0; k <= j; k++, i--, tmp = tmp->next)
+		if (tmp->n != arr[i])
+			return (0);
+	return (1);
 }
