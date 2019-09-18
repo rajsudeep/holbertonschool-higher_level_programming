@@ -10,7 +10,7 @@
  */
 int _is_palindrome(listint_t **head, listint_t *tail)
 {
-	if (tail == NULL)
+	if (tail == NULL || (*head)->n == tail->n)
 		return (1);
 	if ((_is_palindrome(head, tail->next)) == 1)
 		return (0);
@@ -30,7 +30,5 @@ int _is_palindrome(listint_t **head, listint_t *tail)
  */
 int is_palindrome(listint_t **head)
 {
-	if (*head == NULL || (*head)->next == NULL)
-		return (0);
 	return (_is_palindrome(head, *head));
 }
