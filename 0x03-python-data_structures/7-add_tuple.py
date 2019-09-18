@@ -6,6 +6,7 @@ def handle_sm_tuple(tuple_list):
         else:
             tuple_list.extend([0, 0])
 
+
 def add_tuple(tuple_a=(), tuple_b=()):
     list_a = list(tuple_a)
     list_b = list(tuple_b)
