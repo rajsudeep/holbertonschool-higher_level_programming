@@ -12,6 +12,9 @@ int is_palindrome(listint_t **head)
 	int arr[2056];
 	int i, j, k;
 
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
 	for (i = 0; tmp != NULL; i++, tmp = tmp->next)
 		arr[i] = tmp->n;
 	j = (--i / 2) +1;
