@@ -16,6 +16,7 @@ def sym(sym):
         return 1000
     return 0
 
+
 def roman_to_int(roman_string):
     if roman_string is None or type(roman_string) is not str:
         return 0
