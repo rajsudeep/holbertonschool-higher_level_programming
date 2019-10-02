@@ -9,10 +9,6 @@ class Square:
 
     """
     def __init__(self, size=0, position=(0, 0)):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
         self.__position = position
 
@@ -21,6 +17,11 @@ class Square:
         """ Value of size."""
         return self.__size
 
+    @property
+    def position(self):
+        """Position of square. """
+        return self.__position
+
     @size.setter
     def size(self, value):
         if type(value) is not int:
@@ -28,11 +29,6 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
-    @property
-    def position(self):
-        """Position of square. """
-        return self.__position
 
     @position.setter
     def position(self, value):
@@ -67,7 +63,11 @@ class Square:
         if self.__size is 0:
             print("")
         else:
-            row = (" " * self.position[0]) + ("#" * self.__size)
-            print("\n" * self.position[1], end="")
+            for j in range(self.__position[1]):
+                print("")
             for i in range(self.__size):
-                print(row)
+                for i in range(self.__position[0]):
+                    print(" ", end="")
+                for j in range(self.__size):
+                    print("#", end="")
+                print("")
