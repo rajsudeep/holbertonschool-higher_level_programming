@@ -1,0 +1,57 @@
+The ``5-text_indentation`` module
+==========================
+
+Using ``text_indentation``
+---------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now Testing:
+
+    Indent a '.' sentence:
+    >>> text_indentation("Haha I am great.")
+    Haha I am great.
+    <BLANKLINE>
+
+    Indent a '?' sentence:
+    >>> text_indentation("Haha I am great?")
+    Haha I am great?
+    <BLANKLINE>
+
+    Indent a ':' sentence:
+    >>> text_indentation("Haha I am great:")
+    Haha I am great:
+    <BLANKLINE>
+
+    Trailing spaces before sentence:
+    >>> text_indentation("     Yum dude.")
+    Yum dude.
+    <BLANKLINE>
+
+    Trailing spaces after sentence:
+    >>> text_indentation("Yum dude.    ")
+    Yum dude.
+    <BLANKLINE>
+
+    Trailing spaces in middle sentence:
+    >>> text_indentation("Yum.     Yum. Yum.")
+    Yum.
+    <BLANKLINE>
+    Yum.
+    <BLANKLINE>
+    Yum.
+    <BLANKLINE>
+
+    All indent characters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+    Pass a non-string parameter:
+    >>> text_indentation(1234)
+    Traceback (most recent call last):
+    TypeError: text must be a string
