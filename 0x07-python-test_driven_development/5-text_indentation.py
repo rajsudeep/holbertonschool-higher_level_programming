@@ -6,6 +6,7 @@ text_indentation
 
 """
 
+
 def text_indentation(text):
     """
     Prints a reformatted a text with double new line indentation
