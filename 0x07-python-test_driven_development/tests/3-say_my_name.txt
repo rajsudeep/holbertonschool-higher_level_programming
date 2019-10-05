@@ -1,0 +1,32 @@
+The ``3-say_my_name`` module
+==========================
+
+Using ``say_my_name``
+---------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now Testing:
+
+    Print Happy Boy
+    >>> say_my_name("Happy", "Boy")
+    My name is Happy Boy
+
+    Print only first name
+    >>> say_my_name("Happy")
+    My name is Happy 
+
+    No first name passed
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    Wrong type for first parameter
+    >>> say_my_name(123)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    Wrong type for last parameter
+    >>> say_my_name("Happy", 123)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
