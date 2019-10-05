@@ -6,6 +6,7 @@ def_square
 
 """
 
+
 def print_square(size):
     """
     Prints a square represented by hashtags
