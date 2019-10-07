@@ -59,7 +59,7 @@ class Rectangle:
         rect_str = ""
         if self.width == 0 or self.height == 0:
             return rect_str
-        rect_str = ((Rectangle.print_symbol * self.width) + '\n') * self.height
+        rect_str = ((str(self.print_symbol) * self.width) + '\n') * self.height
         return rect_str[:-1]
 
     def __repr__(self):
