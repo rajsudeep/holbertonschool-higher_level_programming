@@ -1,0 +1,35 @@
+The ``MyList`` Class
+====================
+
+Using ``MyList``
+----------------
+
+Import and initialize list:
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(3)
+	>>> my_list.append(2)
+	>>> print(my_list)
+	[1, 3, 2]
+
+Print my_list sorted:
+	>>> my_list.print_sorted()
+	[1, 2, 3]
+
+Print original list:
+      >>> print(my_list)
+      [1, 3, 2]
+
+Sort a list of negative ints:
+     >>> my_list = MyList()
+     >>> my_list.append(-1)
+     >>> my_list.append(-2)
+     >>> my_list.append(-3)
+     >>> my_list.print_sorted()
+     [-3, -2, -1]
+
+Sort an empty list:
+     >>> my_list = MyList()
+     >>> my_list.print_sorted()
+     []
