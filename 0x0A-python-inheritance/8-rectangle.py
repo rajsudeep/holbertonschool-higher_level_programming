@@ -5,6 +5,7 @@ Class Rectangle
 
 """
 
+
 class Rectangle(BaseGeometry):
     """ defining rectangle shapes """
 
