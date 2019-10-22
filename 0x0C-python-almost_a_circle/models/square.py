@@ -11,6 +11,7 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """ defines a square """
     print_symbol = '#'
+
     def __init__(self, size, x=0, y=0, id=None):
         """ initialize a square """
         super().__init__(size, size, x, y, id)
@@ -48,4 +49,4 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ returns the dictionary representation of a rectangle """
         return {"id": self.id, "size": self.width,
-                "x": self.x, "y":self.y}
+                "x": self.x, "y": self.y}

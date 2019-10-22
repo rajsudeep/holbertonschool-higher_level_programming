@@ -11,6 +11,7 @@ from models.base import Base
 class Rectangle(Base):
     """ defines a rectangle """
     print_symbol = '#'
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initialize a rectangle """
         self.width = width
@@ -102,4 +103,4 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ returns the dictionary representation of a rectangle """
         return {"id": self.id, "width": self.__width, "height": self.__height,
-                "x": self.__x, "y":self.__y}
+                "x": self.__x, "y": self.__y}
