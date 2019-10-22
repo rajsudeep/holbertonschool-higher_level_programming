@@ -11,7 +11,7 @@ from models.base import Base
 
 class BaseTest(unittest.TestCase):
     """ unit tests for the base class """
-    def test_incrementation:
+    def test_incrementation(self):
         """ sees if object id increments """
         b1 = Base()
         self.assertEqual(b1.id, 1)
@@ -21,11 +21,8 @@ class BaseTest(unittest.TestCase):
 
         b3 = Base()
         self.assertEqual(b3.id, 3)
-    def test_inputs:
+    def test_inputs(self):
         """ checks for various valid inputs """
-        b_zero = Base()
-        self.assertEqual(b1.zero, 1)
-
         b_int = Base(12)
         self.assertEqual(b_int.id, 12)
 
