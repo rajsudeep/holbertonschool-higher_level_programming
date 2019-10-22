@@ -10,6 +10,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """ defines a rectangle """
+    print_symbol = '#'
     def __init__(self, width, height, x=0, y=0, id=None):
         """ initialize a rectangle """
         self.width = width
@@ -72,3 +73,33 @@ class Rectangle(Base):
     def area(self):
         """ calculates the area of a rectangle """
         return self.__height * self.__width
+
+    def display(self):
+        """ project the rectangle using hashes """
+        row = (' ' * self.__x) + (Rectangle.print_symbol * self.__width) + '\n'
+        print(('\n' * self.__y) + (row * self.__height), end="")
+
+    def __str__(self):
+        """ string representation of rectangle """
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """ helper to update attributes """
+        arg = [id, width, height, x, y]
+        var = ["id", "width", "height", "x", "y"]
+        for i in range(5):
+            if arg[i] is not None:
+                setattr(self, var[i], arg[i])
+
+    def update(self, *args, **kwargs):
+        """ update a rectangle's attributes """
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of a rectangle """
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y":self.__y}
