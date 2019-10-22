@@ -12,6 +12,7 @@ import io
 import contextlib
 from models.square import Square
 
+
 class SquareTest(unittest.TestCase):
     """ unit tests for the square class """
     def test_size(self):
@@ -24,12 +25,14 @@ class SquareTest(unittest.TestCase):
 
         r_x = Square(10)
         self.assertEqual(r_x.x, 0)
+
     def test_y(self):
         r_y = Square(10, 1, 1, 1)
         self.assertEqual(r_y.y, 1)
 
         r_y = Square(10)
         self.assertEqual(r_y.y, 0)
+
     def test_err_type(self):
         """ checks no non-int attributes pass """
         with self.assertRaises(TypeError) as e:
@@ -49,6 +52,7 @@ class SquareTest(unittest.TestCase):
             self.assertEqual(
                 "y must be an integer",
                 str(e, exception))
+
     def test_err_dimen_val(self):
         """ check no dimension value is less than or equal to 0 """
         with self.assertRaises(ValueError) as e:
@@ -76,6 +80,7 @@ class SquareTest(unittest.TestCase):
             self.assertEqual(
                 "y must be >= 0",
                 str(e.exception))
+
     def test_area(self):
         """ test the area function """
         r1 = Square(2)
@@ -83,6 +88,7 @@ class SquareTest(unittest.TestCase):
 
         r2 = Square(5, 1, 2, 99)
         self.assertEqual(r2.area(), 25)
+
     def test_dimen_display(self):
         r = Square(2)
         f = io.StringIO()
@@ -97,6 +103,7 @@ class SquareTest(unittest.TestCase):
             r.display()
         r_result = "#\n"
         self.assertEqual(f.getvalue(), r_result)
+
     def test_coord_display(self):
         r = Square(2, 2, 2)
         f = io.StringIO()
@@ -104,9 +111,11 @@ class SquareTest(unittest.TestCase):
             r.display()
         r_result = "\n\n  ##\n  ##\n"
         self.assertEqual(f.getvalue(), r_result)
+
     def test_str(self):
         r = Square(4, 2, 1, 12)
         self.assertEqual(r.__str__(), "[Square] (12) 2/1 - 4")
+
     def test_update_args(self):
         r = Square(10, 10, 10, 1)
         self.assertEqual(r.__str__(), "[Square] (1) 10/10 - 10")
@@ -122,6 +131,7 @@ class SquareTest(unittest.TestCase):
 
         r.update(89, 2, 3, 4)
         self.assertEqual(r.__str__(), "[Square] (89) 3/4 - 2")
+
     def test_update_kwargs(self):
         r = Square(10, 10, 10, 1)
         self.assertEqual(r.__str__(), "[Square] (1) 10/10 - 10")
@@ -134,6 +144,7 @@ class SquareTest(unittest.TestCase):
 
         r.update(y=1, size=2, x=3, id=89)
         self.assertEqual(r.__str__(), "[Square] (89) 3/1 - 2")
+
     def test_dictionary(self):
         r = Square(1, 1, 1, 1)
         r_result = {'x': 1, 'y': 1, 'size': 1, 'id': 1}
