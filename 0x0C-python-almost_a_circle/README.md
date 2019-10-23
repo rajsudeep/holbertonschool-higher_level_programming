@@ -29,12 +29,10 @@
 > * class Rectangle inherits from Base
 > * def area(self): returns the area value of the Rectangle instance
 > * def display(self): prints in stdout the Rectangle instance with the character #
-> * __str__ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
 > * def update(self, *args, **kwargs): assigns a key/value argument to attributes
 > * def to_dictionary(self): returns the dictionary representation
 ### [Square Class](./models/square.py)
 > * Class Square inherits from Rectangle
 > * Class constructor: def __init__(self, size, x=0, y=0, id=None)
-> * __str__ returns [Square] (<id>) <x>/<y> - <size>
 > * def update(self, *args, **kwargs) assigns a key/value argument to attributes
 > * def to_dictionary(self): returns the dictionary representation
