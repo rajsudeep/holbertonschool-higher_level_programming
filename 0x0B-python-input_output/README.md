@@ -27,3 +27,5 @@
 > Public method def to_json(self, attrs=None): that retrieves a dictionary representation of a Student instance (same as 10-class_to_json.py)
 ### [13. Student to disk and reload ](./13-student.py)
 > Public method def reload_from_json(self, json): that replaces all attributes of the Student instance
+### [14. Pascal's Triangle](./14-pascal_triangle.py)
+> Create a function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal’s triangle of n
