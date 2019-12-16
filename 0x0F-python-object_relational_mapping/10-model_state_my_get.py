@@ -12,6 +12,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
-    state_obj = Session().query(State).filter_by(name=state_name).first()
+    session = Session()
+    state_obj = session.query(State).filter_by(name=state_name).first()
     print(state_obj.id if state_obj else "Not found")
-    Session().close()
+    session.close()
