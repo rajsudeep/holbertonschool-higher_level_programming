@@ -10,9 +10,10 @@ if __name__ == "__main__":
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             argv[1], argv[2], argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
-    Session().add(State(name="Louisiana"))
-    Session().commit()
-    print(State(name="Louisiana").id)
-    Session().close()
+    session = Session()
+    row = State(name="Louisiana")
+    session.add(row)
+    session.commit()
+    print(row.id)
+    session.close()
