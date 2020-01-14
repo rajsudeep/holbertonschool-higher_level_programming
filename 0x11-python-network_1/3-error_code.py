@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ sends a request to the URL and displays response  """
 
-import urllib.request
+from urllib import request, error
 import sys
 
 if __name__ == '__main__':
