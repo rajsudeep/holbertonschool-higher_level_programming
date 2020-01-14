@@ -7,12 +7,15 @@ from sys import argv
 
 if __name__ = '__main__':
     url = 'http://0.0.0.0:5000/search_user'
-    q = argv[1] if len(argv) is 2 else q = ""
+    if len(argv) == 2:
+        q = argv[1]
+    else:
+        q = ""
     req = requests.post(url, data={'q': q})
     try:
-        data = req.json()
-        if data:
-            print('[{}] {}'.format(data.get('id'), data.get('name')))
+        stuff = req.json()
+        if stuff:
+            print('[{}] {}'.format(stuff.get('id'), stuff.get('name')))
         else:
             print('No result')
     except:
