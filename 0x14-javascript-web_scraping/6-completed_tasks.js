@@ -7,7 +7,7 @@ request(url, (err, res, body) => {
   if (err) throw new Error(err);
   const completed = JSON.parse(body).reduce((ids, task) => {
     const i = task.userId;
-    if (task.completed) { ids[i] = (ids[i] || 0) + 1; }
+    if (task.completed) { ids[i] ? ids[i]++ : ids[i] = 1; }
     return ids;
   }, {});
   console.log(completed);
